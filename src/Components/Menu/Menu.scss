@@ -1,0 +1,31 @@
+.Menu {
+	position: absolute;
+    bottom: 0;
+	height: 7%;
+	display: flex;
+	justify-content: center;
+    align-items: center;
+	width: 100%;
+    background-color: burlywood;
+    border-top: 1px solid gray;
+
+	a {
+		height: 95%;
+	}
+
+	img {
+		height: 100%;
+		border-radius: 50%;
+		box-shadow: 0px 0px 7px 2px black;
+	}
+
+    .reset{
+        height: 100%;
+        position: absolute;
+        right: 0;
+        border:solid 2px teal;
+        background-color: cadetblue;
+        font-family: 'Permanent Marker';
+        font-size: 1.5rem;
+    }
+}

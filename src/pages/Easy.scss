@@ -1,0 +1,14 @@
+.Easy {
+	height: 100%;
+	overflow-x: hidden;
+	width: 100%;
+	position: relative;
+
+	.cards{
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-column-gap: 10px;
+		grid-row-gap: 10px;
+		height: 89%;
+	}
+}
