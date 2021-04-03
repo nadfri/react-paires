@@ -17,7 +17,7 @@ function Level(props) {
 	const [hiScore, setHiScore] = useState(0);
 	const [replay, setReplay] = useState(false);
 	const [grid, setGrid] = useState({});
-
+	
     const level  =  props.match.params.level;
 
 	/*useEffect*/
@@ -43,7 +43,7 @@ function Level(props) {
             default: setGrid({});
         }
 
-	}, []);
+	}, [level]);
 
 	
 
