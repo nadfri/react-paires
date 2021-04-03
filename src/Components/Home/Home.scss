@@ -1,0 +1,19 @@
+.Home {
+
+    height: 100%;
+    background-color: #607d8b;
+    font-family: "Permanent Marker";
+
+    h1{
+        margin:0;
+    }
+
+    .levels{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 90%;
+    }
+
+}

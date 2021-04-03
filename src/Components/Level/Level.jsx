@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
-import Card from "../Components/Card/Card";
-import Menu from "../Components/Menu/Menu";
-import Score from "../Components/Score/Score";
-import "./Easy.scss";
+import Menu from "../Menu/Menu";
+import Replay from "../Replay/Replay";
+import Score from "../Score/Score";
+import "./Level.scss";
+import createCards from "../createCards"
+import Card from "../Card/Card";
 
-function Easy() {
+function Level(props) {
+
 	/*State*/
 	const [cards, setCards] = useState([]);
 	const [round, setRound] = useState(1);
@@ -12,40 +15,38 @@ function Easy() {
 	const [count, setCount] = useState(1);
 	const [score, setScore] = useState(0);
 	const [hiScore, setHiScore] = useState(0);
+	const [replay, setReplay] = useState(false);
+	const [grid, setGrid] = useState({});
+
+    const level  =  props.match.params.level;
 
 	/*useEffect*/
 	useEffect(() => {
 		//Géneration des cards des images
-		const publicRoot = process.env.PUBLIC_URL;
-		const data = [];
-		const numberofCards = 8; //8x2 = 16
-		setHiScore(localStorage.getItem("hiScore"));
+		setHiScore(localStorage.getItem("hiScore_" + level));
 
-		for (let i = 0; i < 2; i++)
-			for (let numero = 1; numero < numberofCards+1; numero++)
-				data.push({
-					numero,
-					src: `${publicRoot}/images/${numero}.jpg`,
-					discover: false,
-					rotation: false,
-					wrong: false
-				});
+        const levels = [4,8,12,16,20,24,28,32,36,40];
+        
+		const numberofCards = levels[level]; //8x2 = 16
+		setCards(createCards(numberofCards));
 
-		setCards(randomize(data));
-		console.log(data.length);
+        switch(level)
+        {
+            case "1": setGrid({height: "50%"});
+            break;
+            case "2": setGrid({height: "75%"});
+            break;
+
+            case "9": setGrid({gridTemplateColumns: "repeat(5, 1fr)"});
+            break;
+
+            default: setGrid({});
+        }
+
 	}, []);
 
 	
-	function randomize(tab) {
-		var i, j, tmp;
-		for (i = tab.length - 1; i > 0; i--) {
-			j = Math.floor(Math.random() * (i + 1));
-			tmp = tab[i];
-			tab[i] = tab[j];
-			tab[j] = tmp;
-		}
-		return tab;
-	}
+
 
 	function click(index) {
 		const copy = [...cards];
@@ -61,6 +62,7 @@ function Easy() {
 		{
 			currentCard.rotation = true;
 			setRound(3);
+			setScore(score+1);
 
 			if (firstCard.numero === currentCard.numero) 
 			{
@@ -73,12 +75,12 @@ function Easy() {
 				//Game Finished
 				if(count === cards.length/2)
 				{
-					setScore(score+1);	
 					if(score < hiScore || !hiScore)
 					{
-						localStorage.setItem("hiScore", score+1);
-						setHiScore(score+1);
+						console.log('score :>> ', score);
+						localStorage.setItem("hiScore_" + level, score+1);
 					}
+					setReplay(true);
 				}
 			} 
 
@@ -98,14 +100,15 @@ function Easy() {
 					setRound(1);
 				}, 1500);
 			}
-			setScore(score+1);	
+				
 		}
 	}
 
 	return (
-		<div className="Easy">
+		<div className="Level" >
 			<Score score={score} hiScore={hiScore}/>
-			<div className="cards">
+            <div className="container_cards">
+			<div className="cards" style={grid}>
 				{cards.map((card, index) => (
 					<Card
 						src={card.src}
@@ -117,11 +120,11 @@ function Easy() {
 					/>
 				))}
 			</div>
+            </div>
 			<Menu/>
+			{replay? <Replay score={score} nextLevel={"/"}/> : null}
 		</div>
 	);
 }
 
-export default Easy;
-
-
+export default Level;

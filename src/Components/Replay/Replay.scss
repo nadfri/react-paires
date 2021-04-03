@@ -1,0 +1,56 @@
+.Replay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	backdrop-filter: blur(5px);
+	background-color: rgba(0, 0, 0, 0.4);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	.container {
+		width: 80%;
+		max-width: 300px;
+		height: 30%;
+		max-height: 200px;
+		border-radius: 5px;
+		background-color: blanchedalmond;
+		border: solid 3px teal;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-around;
+		cursor: pointer;
+		font-family: "Permanent Marker";
+	}
+
+	.buttons {
+		font-family: "Permanent Marker";
+		width: 100%;
+		display: flex;
+		justify-content: space-around;
+	}
+
+	a {
+		text-decoration: none;
+		color: black;
+	}
+
+	button {
+		font-family: "Permanent Marker";
+		font-size: 1.5rem;
+		padding: 0 10px;
+	}
+
+	h3 {
+		margin: 0;
+		font-size: 3rem;
+	}
+
+	p {
+		margin: 0;
+		font-size: 2rem;
+	}
+}
