@@ -8,6 +8,7 @@ function Menu() {
         <footer className="Menu">
             <Link to="/"><img src={home} alt="home"/></Link>
             <button className="reset" onClick={() => window.location.reload()}>Reset</button>
+            
         </footer>
     );
 }
