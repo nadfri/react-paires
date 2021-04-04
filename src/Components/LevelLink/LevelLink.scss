@@ -3,16 +3,22 @@
 	background-color: #9a9a9a;
 	border: 2px solid #1770b2;
 	border-radius: 30px;
-	color: #481300;
+	color: #1770b2;
 	padding: 1px 10px;
-
-	font-size: 1.2rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	box-shadow: 0px 0px 6px 0px black;
-	text-shadow: 1px 1px 1px #5a4545;
+	position: relative;
+	text-shadow: 1px 1px 1px #2b2b2b;
+	
+	.content{
+		position: absolute;
+		top: 5px;
+		font-size: 1.2rem;
+		
+	}
 
 	.number {
 		display: flex;
@@ -24,5 +30,7 @@
 		height: 60px;
 		box-shadow: 0px 0px 6px 0px black;
 		font-size: 1.3rem;
+		border: 1px solid #1770b2;
+		
 	}
 }

@@ -1,16 +1,15 @@
-.Score{
-    display: flex;
-    justify-content: space-between;
-    padding: 0 5px;
-    font-family: 'Permanent Marker', cursive;
-    font-size: 0.9rem;
-    color:white;
+.Score {
+	display: flex;
+	justify-content: space-between;
+	padding: 0 5px;
+	font-family: "Permanent Marker", cursive;
+	font-size: 0.9rem;
 
-    .score{
-        color: #1c8adb;
-    }
+	.score {
+		color: #1c8adb;
+	}
 
-    .hiScore{
-        color:#ff9800;
-    }
+	.hiScore {
+		color: #ff9800;
+	}
 }
