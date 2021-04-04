@@ -30,14 +30,15 @@ function Level(props) {
 		setRound(1);
 		setCount(1);
 		setScore(0);
+		setFirstCard(null);
 		setWinBox(false);
 		setReload(false);
 
 		const levels        = [4, 8, 12, 16, 20, 24, 28, 32, 36, 40];
 		const numberofCards = levels[level]; //8x2 = 16
 
-		setTimeout(setCards(createCards(numberofCards)),5000)
-
+		setCards(createCards(numberofCards));
+		/*Ajustement du display Grid*/
 		switch (level) {
 			case 1:
 				setGrid({ height: "50%" });
@@ -139,7 +140,10 @@ function Level(props) {
 			</div>
 			<Menu />
 			{winBox ? (
-				<WinBox score={score} nextLevel={level + 1} newRecord={newRecord} reload={()=>setReload(true)} />
+				<WinBox score={score} 
+				         nextLevel={level + 1} 
+						 newRecord={newRecord} 
+						 reload={()=>setReload(true)} />
 			) : null}
 		</div>
 	);

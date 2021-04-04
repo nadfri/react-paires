@@ -7,7 +7,7 @@ function LevelLink(props) {
 	return (
 		<Link to={link} className="LevelLink">
 			{props.content}
-			<span className="number">{props.cards}</span>
+			<span className="number">{props.cards}⭐</span>
 		</Link>
 	);
 }
