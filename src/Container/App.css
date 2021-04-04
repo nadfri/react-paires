@@ -1,10 +1,15 @@
 .App {
-  text-align: center;
-  height: 100%;
-  max-width: 800px;
-  margin: auto;
-  overflow: auto;
+	text-align: center;
+	height: 100%;
+	max-width: 800px;
+	margin: auto;
+	overflow: auto;
 }
 
-
-
+@media screen and (min-width: 800px) {
+	.App {
+		border: 2px solid #9a9a9a;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 3px black;
+	}
+}

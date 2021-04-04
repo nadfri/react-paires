@@ -4,8 +4,8 @@ import "./Score.scss";
 function Score(props) {
     return (
         <div className="Score">
-           <span>Score: {props.score}</span>
-           <span>HighScore: {props.hiScore || "000"}</span>
+           <span className="score">Score: {props.score}</span>
+           <span className="hiScore">HighScore: {props.hiScore || "000"}</span>
         </div>
     );
 }
