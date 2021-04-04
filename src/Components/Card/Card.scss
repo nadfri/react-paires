@@ -5,7 +5,7 @@
 	overflow: hidden; //empeche l'image de sortir de la grid
 
 	.back {
-		border: solid gold 2px;
+		border: solid #1770b2 2px;
 		border-radius: 5px;
 		background: linear-gradient(
 			129deg,
@@ -48,7 +48,7 @@
 
 		90% {
 			transform: scale(1) rotateY(180deg);
-			border: solid 2px gold;
+			border: solid 2px #1770b2;
 		}
 	}
 

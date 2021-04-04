@@ -19,7 +19,8 @@ function Level(props) {
 	const [grid, setGrid] = useState({});
 	const [newRecord, setNewRecord] = useState(false);
 
-    const level  =  parseInt(props.match.params.level);
+    let level  =  parseInt(props.match.params.level);
+	level = level>9? 9 : level; 
 
 	/*useEffect*/
 	useEffect(() => {
@@ -39,6 +40,8 @@ function Level(props) {
             case 1: setGrid({height: "50%"});
             break;
             case 2: setGrid({height: "75%"});
+            break;
+			case 8: setGrid({gridTemplateColumns: "repeat(6, 1fr)", gridGap:"3px"});
             break;
             case 9: setGrid({gridTemplateColumns: "repeat(5, 1fr)"});
             break;
@@ -103,7 +106,7 @@ function Level(props) {
 
 					setCards(copy);
 					setRound(1);
-				}, 1500);
+				}, 1000);
 			}
 				
 		}

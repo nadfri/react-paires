@@ -7,7 +7,7 @@ function Card(props) {
 
     let classes = props.rotation? "back rotation" : "back";
     if(props.discover) classes += " discover";
-	if(props.wrong) classes +=" wrong";
+	if(props.wrong)    classes +=" wrong";
 
 	return (
 		<div className="Card">
