@@ -17,33 +17,37 @@ function Level(props) {
 	const [hiScore, setHiScore] = useState(0);
 	const [replay, setReplay] = useState(false);
 	const [grid, setGrid] = useState({});
-	
-    const level  =  props.match.params.level;
+	const [newRecord, setNewRecord] = useState(false);
+
+    const level  =  parseInt(props.match.params.level);
 
 	/*useEffect*/
 	useEffect(() => {
 		//Géneration des cards des images
 		setHiScore(localStorage.getItem("hiScore_" + level));
+		setRound(1);
+		setCount(1);
+		setScore(0);
+		setReplay(false);
 
         const levels = [4,8,12,16,20,24,28,32,36,40];
-        
 		const numberofCards = levels[level]; //8x2 = 16
 		setCards(createCards(numberofCards));
 
         switch(level)
         {
-            case "1": setGrid({height: "50%"});
+            case 1: setGrid({height: "50%"});
             break;
-            case "2": setGrid({height: "75%"});
+            case 2: setGrid({height: "75%"});
             break;
-
-            case "9": setGrid({gridTemplateColumns: "repeat(5, 1fr)"});
+            case 9: setGrid({gridTemplateColumns: "repeat(5, 1fr)"});
             break;
-
             default: setGrid({});
         }
 
 	}, [level]);
+
+
 
 	
 
@@ -77,10 +81,11 @@ function Level(props) {
 				{
 					if(score < hiScore || !hiScore)
 					{
-						console.log('score :>> ', score);
+						setNewRecord(true);
 						localStorage.setItem("hiScore_" + level, score+1);
 					}
-					setReplay(true);
+
+					setTimeout(()=> setReplay(true),1500);
 				}
 			} 
 
@@ -122,7 +127,8 @@ function Level(props) {
 			</div>
             </div>
 			<Menu/>
-			{replay? <Replay score={score} nextLevel={"/"}/> : null}
+			{replay? <Replay score={score} nextLevel={level+1} newRecord={newRecord}  
+			/> : null}
 		</div>
 	);
 }

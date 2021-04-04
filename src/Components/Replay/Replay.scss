@@ -4,7 +4,7 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
-	backdrop-filter: blur(5px);
+	backdrop-filter: blur(10px);
 	background-color: rgba(0, 0, 0, 0.4);
 	display: flex;
 	align-items: center;
@@ -16,8 +16,8 @@
 		height: 30%;
 		max-height: 200px;
 		border-radius: 5px;
-		background-color: blanchedalmond;
-		border: solid 3px teal;
+		background-color: #9e9e9e;
+		border: solid 3px #1c8adb;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -38,19 +38,21 @@
 		color: black;
 	}
 
-	button {
+	button,
+	a {
 		font-family: "Permanent Marker";
 		font-size: 1.5rem;
 		padding: 0 10px;
-	}
-
-	h3 {
-		margin: 0;
-		font-size: 3rem;
+		border: solid 2px #1c8adb;
+		background-color: #607d8b;
+		border-radius: 5px;
+		box-shadow: 0 0 8px 1px black;
 	}
 
 	p {
 		margin: 0;
 		font-size: 2rem;
+		text-shadow: 1px 1px 5px black;
+		color: #ffc107;
 	}
 }
