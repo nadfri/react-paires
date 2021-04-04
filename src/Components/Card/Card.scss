@@ -41,15 +41,15 @@
 	}
 
 	@keyframes scale {
-		50% {
+		10% {
 			transform: scale(1.1) rotateY(180deg);
 			border: solid 2px green;
 		}
 
-		90% {
+		50% {
 			transform: scale(1) rotateY(180deg);
-			border: solid 2px #1770b2;
 		}
+
 	}
 
 	.wrong {
