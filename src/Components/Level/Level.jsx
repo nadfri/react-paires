@@ -65,7 +65,7 @@ function Level(props) {
 		const copy        = [...cards];
 		const currentCard = copy[index];
 
-		if (round === 1) 
+		if (round === 1 && currentCard.rotation === "") 
 		{
 			currentCard.rotation = "rotation";
 			setFirstCard(currentCard);
