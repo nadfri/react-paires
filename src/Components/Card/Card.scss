@@ -19,12 +19,10 @@
 		transition: all 1s ease-in-out;
 		transform-style: preserve-3d;
 		height: 100%;
-		backface-visibility: hidden; //for iOS on parent
 
 		img {
 			width: 100%;
 			height: 100%;
-
 			transform: rotateY(180deg); //rotate this face
 			backface-visibility: hidden; //important for e.target.classList
 			pointer-events: none; //prevent select image/
@@ -50,10 +48,18 @@
 		50% {
 			transform: scale(1) rotateY(180deg);
 		}
-
 	}
 
 	.wrong {
 		border: solid 2px red;
+	}
+
+	/*Only For Safari*/
+	@media not all and (min-resolution: 0.001dpcm) {
+		@supports (-webkit-appearance: none) {
+			.back {
+				backface-visibility: hidden;
+			}
+		}
 	}
 }
