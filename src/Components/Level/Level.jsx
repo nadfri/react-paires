@@ -40,6 +40,7 @@ function Level(props) {
 		setCards(createCards(numberofCards));
 		/*Ajustement du display Grid*/
 		switch (level) {
+			case 0:
 			case 1:
 				setGrid({ height: "50%" });
 				break;
@@ -66,20 +67,20 @@ function Level(props) {
 
 		if (round === 1) 
 		{
-			currentCard.rotation = true;
+			currentCard.rotation = "rotation";
 			setFirstCard(currentCard);
 			setRound(2);
 		} 
-		else if (round === 2 && currentCard.rotation === false) 
+		else if (round === 2 && currentCard.rotation === "") 
 		{
-			currentCard.rotation = true;
+			currentCard.rotation = "rotation";
 			setRound(0);
 			setScore(score + 1);
 
 			if (firstCard.numero === currentCard.numero) 
 			{
-				firstCard.discover   = true;
-				currentCard.discover = true;
+				firstCard.discover   = "discover";
+				currentCard.discover = "discover";
 				//setCards(copy);
 				setRound(1);
 				setCount(count + 1);
@@ -97,21 +98,21 @@ function Level(props) {
 					
 					setTimeout(() => {
 						setWinBox(true);
-						for (let card of copy) card.rotation = false;
+						for (let card of copy) card.rotation = "";
 						setCards(copy)
 					}, 1000);
 				}
 			} 
 			else 
 			{
-				firstCard.wrong   = true;
-				currentCard.wrong = true;
+				firstCard.wrong   = "wrong";
+				currentCard.wrong = "wrong";
 
 				setTimeout(() => {
-					firstCard.rotation   = false;
-					currentCard.rotation = false;
-					firstCard.wrong      = false;
-					currentCard.wrong    = false;
+					firstCard.rotation   = "";
+					currentCard.rotation = "";
+					firstCard.wrong      = "";
+					currentCard.wrong    = "";
 
 					//setCards(copy);
 					setRound(1);
@@ -128,12 +129,9 @@ function Level(props) {
 				<div className="cards" style={grid}>
 					{cards.map((card, index) => (
 						<Card
-							src={card.src}
 							key={index}
 							click={() => click(index)}
-							rotation={card.rotation}
-							discover={card.discover}
-							wrong={card.wrong}
+							card={card}
 						/>
 					))}
 				</div>

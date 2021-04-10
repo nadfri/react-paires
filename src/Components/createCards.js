@@ -8,9 +8,9 @@ export default function createCards(numberOfCards) {
 			data.push({
 				numero,
 				src: `${publicRoot}/images/${numero}.jpg`,
-				discover: false,
-				rotation: false,
-				wrong: false,
+				discover: "",
+				rotation: "",
+				wrong: "",
 			});
 
 	return(randomize(data));

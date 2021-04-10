@@ -1,19 +1,13 @@
-import React, {useEffect} from "react";
+import React from "react";
 import "./Card.scss";
 
-function Card(props) {
-
-	useEffect( ()=> console.log("Mount"),[]);
-
-    let classes = props.rotation? "back rotation" : "back";
-    if(props.discover) classes += " discover";
-	if(props.wrong)    classes +=" wrong";
+function Card({card,click}) {
 
 	return (
 		<div className="Card">
-			<div className={classes} onClick={props.click}>
+			<div className={`back ${card.discover} ${card.wrong} ${card.rotation}`} onClick={click}>
 				<img
-					src={props.src}
+					src={card.src}
 					alt=""
 				/>
 			</div>

@@ -12,6 +12,7 @@ function Replay(props) {
 				{props.newRecord? <p>Nouveau Record!</p> : null}
 				<div className="buttons">
 					<button onClick={props.reload}>Rejouer</button>
+					
 					{props.nextLevel < 9 ? (
 						<Link to={nextLevelLink} onClick={props.reload}>Suivant</Link>
 					) : null}
