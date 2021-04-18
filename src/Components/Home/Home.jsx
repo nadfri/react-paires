@@ -1,7 +1,6 @@
 import React from 'react';
 import './Home.scss';
 import LevelLink from '../LevelLink/LevelLink';
-import PwaButton from '../PwaButton/PwaButton';
 
 function Home() {
 	return (
@@ -18,7 +17,6 @@ function Home() {
 				<LevelLink link='8' content='Niveau 8' cards='36' />
 				<LevelLink link='9' content='Niveau 9' cards='40' />
 			</div>
-			<PwaButton />
 		</div>
 	);
 }
