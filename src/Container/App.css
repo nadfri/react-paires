@@ -4,6 +4,7 @@
 	max-width: 800px;
 	margin: auto;
 	overflow: auto;
+	position: relative;
 }
 
 @media screen and (min-width: 800px) {
