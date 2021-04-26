@@ -12,14 +12,15 @@ function PwaButton() {
 			setTimeout(() => {
 				setSupportsPWA(true);
 				setPromptInstall(event);
-			}, 500);
+			}, 300);
+
+			setTimeout(() => setSupportsPWA(false), 7000);
 		};
 
 		window.addEventListener('beforeinstallprompt', handler);
 
 		return () => window.removeEventListener('beforeinstallprompt', handler);
 	}, []);
-
 
 	const click = () => promptInstall.prompt();
 
