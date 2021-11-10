@@ -9,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
 	document.body.oncontextmenu = (e) => e.preventDefault(); //disable rigth click
-	console.log("Application à jour...")
+	
 
 	return (
 		<div className="App" oncontextmenu="return false">
