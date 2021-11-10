@@ -7,7 +7,8 @@ import Home from "../Components/Home/Home";
 
 function App() {
 	document.body.oncontextmenu = (e) => e.preventDefault(); //disable rigth click
-	console.log("success Update");
+	console.log("Application à jour...")
+
 	return (
 		<div className="App" oncontextmenu="return false">
 			<PwaButton />
