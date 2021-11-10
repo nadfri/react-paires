@@ -7,8 +7,9 @@ import Home from "../Components/Home/Home";
 
 function App() {
 	document.body.oncontextmenu = (e) => e.preventDefault(); //disable rigth click
+	console.log("success Update");
 	return (
-		<div className="App">
+		<div className="App" oncontextmenu="return false">
 			<PwaButton />
 			<Switch>
 				<Route exact path="/" component={Home} />
