@@ -72,11 +72,15 @@ function registerValidSW(swUrl, config) {
 								'New content is available and will be used when all ' +
 									'tabs for this page are closed. See https://cra.link/PWA.',
 							);
-							toast.info(`Update available! To update, close all windows and reopen.`, {
-								toastId: 'appUpdateAvailable', // Prevent duplicate toasts
-								onClick: () => window.close(), // Closes windows on click
-								autoClose: false, // Prevents toast from auto closing
-							});
+							toast.info(`Mise à jour disponible, redemarrez l'app`, {
+                icon: '🚀',
+                position: 'top-center',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: true,
+              });
 
 							// Execute callback
 							if (config && config.onUpdate) {

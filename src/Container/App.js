@@ -4,6 +4,8 @@ import { Route, Switch } from "react-router-dom";
 import PwaButton from "../Components/PwaButton/PwaButton";
 import Level from "../Components/Level/Level";
 import Home from "../Components/Home/Home";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
 	document.body.oncontextmenu = (e) => e.preventDefault(); //disable rigth click
@@ -16,6 +18,7 @@ function App() {
 				<Route exact path="/" component={Home} />
 				<Route exact path="/level/:level" component={Level} />
 			</Switch>
+			<ToastContainer />
 		</div>
 	);
 }
