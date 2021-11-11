@@ -66,7 +66,7 @@ function registerValidSW(swUrl, config) {
 							toast.info(`Mise à jour disponible, redemarrez l'app`, {
 								icon: '🚀',
 								position: 'top-center',
-								autoClose: 5000,
+								autoClose: false,
 								hideProgressBar: false,
 								closeOnClick: true,
 								pauseOnHover: false,
