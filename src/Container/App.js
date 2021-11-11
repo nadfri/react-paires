@@ -12,7 +12,7 @@ function App() {
 	
 
 	return (
-		<div className="App" oncontextmenu="return false">
+		<div className="App">
 			<PwaButton />
 			<Switch>
 				<Route exact path="/" component={Home} />
