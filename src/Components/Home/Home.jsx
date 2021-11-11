@@ -5,7 +5,7 @@ import LevelLink from '../LevelLink/LevelLink';
 function Home() {
 	return (
 		<div className='Home'>
-			<h1>React Memory <span className="version">1.0.3</span></h1>
+			<h1>React Memory <span className="version">1.0.4</span></h1>
 			<div className='levels'>
 				<LevelLink link='1' content='Niveau 1' cards='8' />
 				<LevelLink link='2' content='Niveau 2' cards='12' />
