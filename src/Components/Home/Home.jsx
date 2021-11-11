@@ -5,13 +5,13 @@ import LevelLink from '../LevelLink/LevelLink';
 function Home() {
 	const reloadBtn = () => {
 		alert('Reloading...');
-		window.location.href = "https://react-paires.netlify.app/";
+		window.location.href = "/" + Date.now();
 	};
 
 	return (
 		<div className='Home'>
 			<h1>
-				React Memory <span className='version'>1.0.14</span>
+				React Memory <span className='version'>1.0.15</span>
 			</h1>
 			<div className='levels'>
 				<LevelLink link='1' content='Niveau 1' cards='8' />
