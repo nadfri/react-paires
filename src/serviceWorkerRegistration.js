@@ -86,12 +86,15 @@ function registerValidSW(swUrl, config) {
 								config.onUpdate(registration);
 							}
 
-
 							//reload the page in 5 seconds
-							setTimeout(()=>window.location.reload(), 5000);
+							let count = 5;
+							setInterval(() => {
+								count--;
+								console.log('redemarrage...,', count);
+							}, 1000);
+							setTimeout(() => window.location.reload(), 5000);
+
 							
-
-
 						} else {
 							// At this point, everything has been precached.
 							// It's the perfect time to display a
