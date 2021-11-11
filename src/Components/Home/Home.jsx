@@ -3,9 +3,16 @@ import './Home.scss';
 import LevelLink from '../LevelLink/LevelLink';
 
 function Home() {
+	const reloadBtn = () => {
+		alert('Reloading...');
+		window.location.reload();
+	};
+
 	return (
 		<div className='Home'>
-			<h1>React Memory <span className="version">1.0.8</span></h1>
+			<h1>
+				React Memory <span className='version'>1.0.9</span>
+			</h1>
 			<div className='levels'>
 				<LevelLink link='1' content='Niveau 1' cards='8' />
 				<LevelLink link='2' content='Niveau 2' cards='12' />
@@ -17,7 +24,7 @@ function Home() {
 				<LevelLink link='8' content='Niveau 8' cards='36' />
 				<LevelLink link='9' content='Niveau 9' cards='40' />
 			</div>
-			<button onClick={()=> window.location.reload()}>reload</button>
+			<button onClick={reloadBtn}>reload</button>
 		</div>
 	);
 }
