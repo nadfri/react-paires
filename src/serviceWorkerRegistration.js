@@ -54,7 +54,7 @@ function registerValidSW(swUrl, config) {
 			setInterval(() => {
 				registration.update();
 				console.log('Checked for update...');
-			}, 1000 * 60 * 1);
+			}, 1000 * 60 * 0.5);
 
 			registration.onupdatefound = () => {
 				const installingWorker = registration.installing;
@@ -87,12 +87,12 @@ function registerValidSW(swUrl, config) {
 							}
 
 							//reload the page in 5 seconds
-							let count = 4;
-							setInterval(() => {
-								count--;
-								console.log('redemarrage...,', count);
-							}, 1000);
-							setTimeout(() => window.location.reload(true), 5000);
+							// let count = 4;
+							// setInterval(() => {
+							// 	count--;
+							// 	console.log('redemarrage...,', count);
+							// }, 1000);
+							// setTimeout(() => window.location.reload(), 5000);
 
 							
 						} else {
