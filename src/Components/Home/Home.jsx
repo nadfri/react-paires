@@ -5,14 +5,14 @@ import LevelLink from '../LevelLink/LevelLink';
 function Home() {
 	const reloadBtn = () => {
 		alert('Reloading...');
-		const originURL = window.location.href;
-		window.location.href = originURL;
+		const URL = "https://www.google.fr/";
+		window.location.href = URL;
 	};
 
 	return (
 		<div className='Home'>
 			<h1>
-				React Memory <span className='version'>1.0.12</span>
+				React Memory <span className='version'>1.0.13</span>
 			</h1>
 			<div className='levels'>
 				<LevelLink link='1' content='Niveau 1' cards='8' />
