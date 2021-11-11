@@ -54,7 +54,7 @@ function registerValidSW(swUrl, config) {
 			setInterval(() => {
 				registration.update();
 				console.log('Checked for update...');
-			}, 1000 * 60 * 5);
+			}, 1000 * 60 * 1);
 
 			registration.onupdatefound = () => {
 				const installingWorker = registration.installing;
@@ -87,8 +87,9 @@ function registerValidSW(swUrl, config) {
 							}
 
 
-							//reload the page
-							window.location.reload();
+							//reload the page in 5 seconds
+							setTimeout(()=>window.location.reload(), 5000);
+							
 
 
 						} else {
