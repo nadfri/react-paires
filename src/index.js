@@ -5,6 +5,7 @@ import App from "./Container/App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
+import "@fontsource/permanent-marker";
 
 ReactDOM.render(
 	<React.StrictMode>

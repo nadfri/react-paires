@@ -54,8 +54,7 @@ function registerValidSW(swUrl, config) {
 			setInterval(() => {
 				registration.update();
 				console.log('Checked for update...');
-			}, 1000 * 60 * 1);
-
+			}, 1000 * 60 * 5);
 
 			registration.onupdatefound = () => {
 				const installingWorker = registration.installing;
@@ -73,19 +72,25 @@ function registerValidSW(swUrl, config) {
 									'tabs for this page are closed. See https://cra.link/PWA.',
 							);
 							toast.info(`Mise à jour disponible, redemarrez l'app`, {
-                icon: '🚀',
-                position: 'top-center',
-                autoClose: 2000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: false,
-                draggable: true,
-              });
+								icon: '🚀',
+								position: 'top-center',
+								autoClose: 5000,
+								hideProgressBar: false,
+								closeOnClick: true,
+								pauseOnHover: false,
+								draggable: true,
+							});
 
 							// Execute callback
 							if (config && config.onUpdate) {
 								config.onUpdate(registration);
 							}
+
+
+							//reload the page
+							window.location.reload();
+
+
 						} else {
 							// At this point, everything has been precached.
 							// It's the perfect time to display a
