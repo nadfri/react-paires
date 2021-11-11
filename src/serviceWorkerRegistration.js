@@ -73,8 +73,8 @@ function registerValidSW(swUrl, config) {
 							);
 							toast.info(`Mise à jour disponible, redemarrez l'app`, {
 								icon: '🚀',
-								position: 'top-center',
-								autoClose: 5000,
+								position: 'center',
+								autoClose: false,
 								hideProgressBar: false,
 								closeOnClick: true,
 								pauseOnHover: false,
@@ -87,12 +87,12 @@ function registerValidSW(swUrl, config) {
 							}
 
 							//reload the page in 5 seconds
-							let count = 5;
+							let count = 4;
 							setInterval(() => {
 								count--;
 								console.log('redemarrage...,', count);
 							}, 1000);
-							setTimeout(() => window.location.reload(), 5000);
+							setTimeout(() => window.location.reload(true), 5000);
 
 							
 						} else {
