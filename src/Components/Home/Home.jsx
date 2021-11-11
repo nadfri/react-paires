@@ -5,7 +5,8 @@ import LevelLink from '../LevelLink/LevelLink';
 function Home() {
 	const reloadBtn = () => {
 		alert('Reloading...');
-		window.location.replace("/");
+		const originURL = window.location.href;
+		window.location.href = originURL;
 	};
 
 	return (
