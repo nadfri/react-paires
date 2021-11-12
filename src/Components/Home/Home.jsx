@@ -8,7 +8,7 @@ function Home() {
 	return (
 		<div className='Home'>
 			<h1>
-				React Memory <span className='version'>1.0.22</span>
+				React Memory <span className='version'>1.0.23</span>
 			</h1>
 			<div className='levels'>
 				<LevelLink link='1' content='Niveau 1' cards='8' />
