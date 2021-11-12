@@ -1,5 +1,19 @@
 import { toast } from 'react-toastify';
 
+function emptyCache(){
+    if('caches' in window){
+    caches.keys().then((names) => {
+            // Delete all the cache files
+            names.forEach(name => {
+                caches.delete(name);
+            })
+        });
+
+        // Makes sure the page reloads. Changes are only visible after you refresh.
+        window.location= "/reload";
+    }
+}
+
 const isLocalhost = Boolean(
 	window.location.hostname === 'localhost' ||
 		// [::1] is the IPv6 localhost address.
@@ -72,9 +86,7 @@ function registerValidSW(swUrl, config) {
 								pauseOnHover: false,
 								draggable: true,
 								theme:'colored',
-								onClose: () => {
-									window.location = '/reload';
-								}
+								onClose: emptyCache
 							});
 
 							// Execute callback

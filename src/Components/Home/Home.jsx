@@ -4,11 +4,24 @@ import LevelLink from '../LevelLink/LevelLink';
 
 function Home() {
 
+	function emptyCache(){
+		if('caches' in window){
+		caches.keys().then((names) => {
+				// Delete all the cache files
+				names.forEach(name => {
+					caches.delete(name);
+				})
+			});
+	
+			// Makes sure the page reloads. Changes are only visible after you refresh.
+			window.location= "/reload";
+		}
+	}
 
 	return (
 		<div className='Home'>
 			<h1>
-				React Memory <span className='version'>1.0.23</span>
+				React Memory <span className='version'>1.0.3</span>
 			</h1>
 			<div className='levels'>
 				<LevelLink link='1' content='Niveau 1' cards='8' />
@@ -21,6 +34,7 @@ function Home() {
 				<LevelLink link='8' content='Niveau 8' cards='36' />
 				<LevelLink link='9' content='Niveau 9' cards='40' />
 			</div>
+			<button onClick={emptyCache}>TEST</button>
 		</div>
 	);
 }
