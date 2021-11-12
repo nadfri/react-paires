@@ -49,7 +49,7 @@ function registerValidSW(swUrl, config) {
 			setInterval(() => {
 				registration.update();
 				console.log('Checked for update...');
-			}, 1000 * 60 * 0.5);
+			}, 1000 * 60 * 5);
 
 			registration.onupdatefound = () => {
 				const installingWorker = registration.installing;
@@ -66,7 +66,7 @@ function registerValidSW(swUrl, config) {
 							toast.info(`Mise à jour disponible, redemarrez l'app`, {
 								icon: '🚀',
 								position: 'top-center',
-								autoClose: false,
+								autoClose: 2000,
 								hideProgressBar: false,
 								closeOnClick: true,
 								pauseOnHover: false,
@@ -76,13 +76,6 @@ function registerValidSW(swUrl, config) {
 							// Execute callback
 							if (config && config.onUpdate) config.onUpdate(registration);
 
-							//reload the page in 5 seconds
-							// let count = 4;
-							// setInterval(() => {
-							// 	count--;
-							// 	console.log('redemarrage...,', count);
-							// }, 1000);
-							// setTimeout(() => window.location.reload(), 5000);
 						} else {
 							// At this point, everything has been precached.
 							// It's the perfect time to display a
