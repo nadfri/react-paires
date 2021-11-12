@@ -63,7 +63,7 @@ function registerValidSW(swUrl, config) {
 							// but the previous service worker will still serve the older
 							// content until all client tabs are closed.
 							console.log('New content is available...');
-							toast.info(`Mise à jour disponible, redemarrez l'app`, {
+							toast.success(`Mise à jour disponible, redemarrez l'app`, {
 								icon: '🚀',
 								position: 'top-center',
 								autoClose: false,
@@ -71,8 +71,9 @@ function registerValidSW(swUrl, config) {
 								closeOnClick: true,
 								pauseOnHover: false,
 								draggable: true,
+								theme:'colored',
 								onClose: () => {
-									window.location.reload();
+									window.location = '/reload';
 								}
 							});
 

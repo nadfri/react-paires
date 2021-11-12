@@ -16,7 +16,7 @@ function App() {
 			<Switch>
 				<Route exact path='/level/:level' component={Level} />
 				<Route exact path='/' component={Home} />
-				<Route render={() => (window.location = "/")} />
+				<Route path='/reload' render={() => (window.location = "/")} />
 			</Switch>
 			<ToastContainer />
 		</div>
