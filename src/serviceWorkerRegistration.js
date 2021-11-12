@@ -49,7 +49,7 @@ function registerValidSW(swUrl, config) {
 			setInterval(() => {
 				registration.update();
 				console.log('Checked for update...');
-			}, 1000 * 60 * 5);
+			}, 1000 * 60 * 1);
 
 			registration.onupdatefound = () => {
 				const installingWorker = registration.installing;
@@ -66,11 +66,14 @@ function registerValidSW(swUrl, config) {
 							toast.info(`Mise à jour disponible, redemarrez l'app`, {
 								icon: '🚀',
 								position: 'top-center',
-								autoClose: 2000,
+								autoClose: false,
 								hideProgressBar: false,
 								closeOnClick: true,
 								pauseOnHover: false,
 								draggable: true,
+								onClose: () => {
+									window.location.reload();
+								}
 							});
 
 							// Execute callback
