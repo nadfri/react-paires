@@ -10,6 +10,8 @@ import 'react-toastify/dist/ReactToastify.css';
 function App() {
 	document.body.oncontextmenu = (e) => e.preventDefault(); //disable rigth click
 
+
+
 	return (
 		<div className='App'>
 			<PwaButton />

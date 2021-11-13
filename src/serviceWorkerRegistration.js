@@ -1,18 +1,6 @@
 import { toast } from 'react-toastify';
 
-function emptyCache(){
-    if('caches' in window){
-    caches.keys().then((names) => {
-            // Delete all the cache files
-            names.forEach(name => {
-                caches.delete(name);
-            })
-        });
 
-        // Makes sure the page reloads. Changes are only visible after you refresh.
-        window.location= "/reload";
-    }
-}
 
 const isLocalhost = Boolean(
 	window.location.hostname === 'localhost' ||
@@ -85,13 +73,12 @@ function registerValidSW(swUrl, config) {
 								closeOnClick: true,
 								pauseOnHover: false,
 								draggable: true,
-								theme:'colored',
-								onClose: emptyCache
+								theme: 'colored',
+								onClose: () => window.location.reload(),
 							});
 
 							// Execute callback
 							if (config && config.onUpdate) config.onUpdate(registration);
-
 						} else {
 							// At this point, everything has been precached.
 							// It's the perfect time to display a
