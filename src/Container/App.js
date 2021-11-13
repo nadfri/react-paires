@@ -10,15 +10,12 @@ import 'react-toastify/dist/ReactToastify.css';
 function App() {
 	document.body.oncontextmenu = (e) => e.preventDefault(); //disable rigth click
 
-
-
 	return (
 		<div className='App'>
 			<PwaButton />
 			<Switch>
 				<Route exact path='/level/:level' component={Level} />
 				<Route exact path='/' component={Home} />
-				<Route path='/reload' render={() => (window.location = "/")} />
 			</Switch>
 			<ToastContainer />
 		</div>
