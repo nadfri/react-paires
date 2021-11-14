@@ -70,11 +70,11 @@ function registerValidSW(swUrl, config) {
 								position: 'top-center',
 								autoClose: false,
 								hideProgressBar: false,
-								closeOnClick: true,
+								closeOnClick: false,
 								pauseOnHover: false,
-								draggable: true,
+								draggable: false,
 								theme: 'colored',
-								onClose: () => window.location.reload(),
+								//onClose: () => window.location.reload(),
 							});
 
 							// Execute callback
